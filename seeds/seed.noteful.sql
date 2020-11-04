@@ -1,7 +1,7 @@
 TRUNCATE noteful_folders, noteful_notes RESTART IDENTITY CASCADE;
 
 INSERT INTO
-    noteful_folders (id, folderName)
+    noteful_folders (id, foldername)
 VALUES 
     (
         1,
@@ -17,7 +17,7 @@ VALUES
     );
 
 INSERT INTO 
-    noteful_notes (id, noteName, modified, folderId, content)
+    noteful_notes (id, notename, modified, folderid, content)
 VALUES
     (
         1,
