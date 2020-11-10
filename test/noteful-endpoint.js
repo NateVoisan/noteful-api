@@ -60,10 +60,10 @@ describe('Noteful Endpoints', function () {
           const expected = new Date().toLocaleString();
           const actual = new Date(res.body.modified).toLocaleString();
           expect(actual).to.eql(expected);
-        });
-      // .then(res =>
-      //   supertest(app).get(`/api/notes/${res.body.id}`).expect(res.body)
-      // );
+        })
+        .then(res =>
+          supertest(app).get(`/api/notes/${res.body.id}`).expect(res.body)
+        );
     });
   });
 });
