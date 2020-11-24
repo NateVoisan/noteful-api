@@ -4,6 +4,12 @@ const path = require('path');
 const notesRouter = express.Router();
 const jsonParser = express.json();
 
+/* Unexpected Token < in JSON at pos 0 
+    - something is possibly wrong with a 'res.json' call.
+      search for a syntax error.
+      in 'notes' and 'folders'.
+*/
+
 notesRouter
   .route('/')
   .get((req, res, next) => {
