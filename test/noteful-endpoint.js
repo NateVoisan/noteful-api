@@ -43,8 +43,8 @@ describe('Noteful Endpoints', function () {
     it('creates a note, responding with 201 and the new note', function () {
       this.retries(3);
       const newNote = {
-        notename: 'Pizza',
-        folderid: 2,
+        name: 'Pizza',
+        folderId: 2,
         content: 'I love pizza.',
       };
       return supertest(app)
@@ -52,8 +52,8 @@ describe('Noteful Endpoints', function () {
         .send(newNote)
         .expect(201)
         .expect(res => {
-          expect(res.body.notename).to.eql(newNote.notename);
-          expect(res.body.folderid).to.eql(newNote.folderid);
+          expect(res.body.name).to.eql(newNote.name);
+          expect(res.body.folderId).to.eql(newNote.folderId);
           expect(res.body.content).to.eql(newNote.content);
           expect(res.body).to.have.property('id');
           expect(res.headers.location).to.eql(`/api/notes/${res.body.id}`);
